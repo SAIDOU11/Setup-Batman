@@ -14,7 +14,7 @@ const characterData = {
     currentScore: [],
   },
   twoface: {
-    name: "two-face",
+    name: "Two Face",
     avatar: "images/two-face.jpg",
     health: 60,
     diceCount: 3,
@@ -28,3 +28,5 @@ const characterData = {
     currentScore: [],
   },
 };
+
+export default characterData;

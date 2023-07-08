@@ -1,36 +1,20 @@
-const moduleStats = {
-  module1: {
-    moduleName: "Learn JS",
-    studentsEnrolled: 2340,
-    studentsCompleted: 2210,
-  },
-  module2: {
-    moduleName: "CSS Basics",
-    studentsEnrolled: 1893,
-    studentsCompleted: 1810,
-  },
-  module3: {
-    moduleName: "Responsive Design",
-    studentsEnrolled: 4600,
-    studentsCompleted: 4357,
-  },
-};
-
-class Module {
+class Character {
   constructor(data) {
-    // property
     Object.assign(this, data);
-    this.percentCompletedModule =
-      (this.studentsCompleted / this.studentsEnrolled) * 100;
   }
-  // method
-  methodLogpercentCompletedModule() {
-    console.log(this.percentCompletedModule);
+  renderCharacter() {
+    const { name, avatar, health, diceCount, currentScore } = this;
+    return `
+    <div class="character-card">
+        <h4 class="name">${name}</h4>
+        <img class="avatar" src=${avatar} />
+        <p class="health">health: <b> ${health} </b></p>
+            <div class="dice-container">
+                <div class="dice">${diceCount}</div>
+            </div>
+    </div>
+    `;
   }
 }
 
-// instance
-const responsiveDesign = new Module(moduleStats.module3);
-responsiveDesign.methodLogpercentCompletedModule();
-
-export { moduleStats, Module };
+export default Character;
