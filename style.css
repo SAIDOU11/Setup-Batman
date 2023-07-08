@@ -135,7 +135,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.4em;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 }
@@ -154,8 +154,8 @@ main {
   width: 5.5vw;
   background: #fff;
   border-radius: 5px;
-  border: 1px solid #666;
   color: #000721;
+  border: 1px solid #666;
   text-align: center;
   line-height: 6vh;
 }
