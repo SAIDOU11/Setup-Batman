@@ -4,14 +4,14 @@ const characterData = {
     avatar: "images/dark-knight.jpg",
     health: 60,
     diceCount: 3,
-    currentScore: [1, 3, 5],
+    currentScore: [],
   },
   twoface: {
     name: "Two Face",
     avatar: "images/two-face.jpg",
     health: 30,
     diceCount: 1,
-    currentScore: [5],
+    currentScore: [],
   },
   joker: {
     name: "Joker",

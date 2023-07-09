@@ -1,15 +1,16 @@
 import characterData from "./data.js";
 import Character from "./Character.js";
 
-const hero = new Character(characterData.batman);
+const batman = new Character(characterData.batman);
 const twoface = new Character(characterData.twoface);
 
 let enemiesArray = ["Two Face", "Bane", "Joker"];
 
-hero.getDiceRollArray(3);
-
 function render() {
-  document.getElementById("hero").innerHTML = hero.renderCharacter();
+  document.getElementById("hero").innerHTML = batman.renderCharacter();
   document.getElementById("enemies").innerHTML = twoface.renderCharacter();
 }
 render();
+
+const box = new Array("📦").fill(1000);
+console.log(box);
