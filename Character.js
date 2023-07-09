@@ -4,11 +4,9 @@ class Character {
   }
   renderCharacter() {
     const { name, avatar, health, diceCount, currentScore } = this;
-    let diceHtml = "";
-
-    currentScore
+    const diceHtml = currentScore
       .map((num) => {
-        diceHtml += `<div class="dice">${num}</div>`;
+        return `<div class="dice">${num}</div>`;
       })
       .join("");
 
@@ -22,6 +20,13 @@ class Character {
             </div>
     </div>
     `;
+  }
+  getDiceRollArray(diceCount) {
+    const newDiceRoll = [];
+    for (let i = 0; i < diceCount; i++) {
+      newDiceRoll.push(Math.floor(Math.random() * 6) + 1);
+      return newDiceRoll;
+    }
   }
 }
 
