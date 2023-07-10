@@ -32,7 +32,6 @@ class Character {
   }
   getHealthBarHtml() {
     const percent = getPercentage(this.health, this.maxHealth);
-    console.log(percent);
     return `
     <div class="health-bar-outer">
       <div class="health-bar-inner ${percent < 26 ? "danger" : ""} " 
