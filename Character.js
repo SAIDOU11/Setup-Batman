@@ -40,8 +40,7 @@ class Character {
     </div>`;
   }
   renderCharacter() {
-    const { name, avatar, health, diceCount, diceHtml, currentDiceScore } =
-      this;
+    const { name, avatar, health, diceHtml } = this;
     const healthBar = this.getHealthBarHtml();
 
     return `
