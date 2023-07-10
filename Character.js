@@ -33,17 +33,24 @@ class Character {
   getHealthBarHtml() {
     const percent = getPercentage(this.health, this.maxHealth);
     console.log(percent);
+    return `
+    <div class="health-bar-outer">
+      <div class="health-bar-inner ${percent < 26 ? "danger" : ""} " 
+        style="width: ${percent}%;">
+      </div>
+    </div>`;
   }
   renderCharacter() {
     const { name, avatar, health, diceCount, diceHtml, currentDiceScore } =
       this;
-    const healthBar = getHealthBarHtml();
+    const healthBar = this.getHealthBarHtml();
 
     return `
     <div class="character-card">
         <h4 class="name">${name}</h4>
         <img class="avatar" src=${avatar} />
         <p class="health">health: <b> ${health} </b></p>
+        ${healthBar}
             <div class="dice-container">
                 ${diceHtml}
             </div>
