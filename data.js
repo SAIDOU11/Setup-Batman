@@ -9,7 +9,7 @@ const characterData = {
   twoface: {
     name: "Two Face",
     avatar: "images/two-face.jpg",
-    health: 30,
+    health: 20,
     diceCount: 1,
     currentDiceScore: [],
   },
@@ -24,7 +24,7 @@ const characterData = {
   bane: {
     name: "Bane",
     avatar: "images/Bane.jpg",
-    health: 20,
+    health: 30,
     diceCount: 3,
     currentScore: [],
   },

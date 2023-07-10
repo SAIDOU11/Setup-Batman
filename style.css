@@ -155,7 +155,8 @@ main {
   width: 5.5vh;
   background: #fff;
   border-radius: 5px;
-  color: #50609b;
+  color: #162043;
+  font-size: 2rem;
   border: 1px solid #666;
   text-align: center;
   line-height: 6vh;
@@ -206,6 +207,7 @@ button:focus {
 .end-game {
   margin-top: 25%;
   text-align: center;
+  font-size: 2rem;
 }
 
 .end-emoji {
