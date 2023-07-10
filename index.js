@@ -11,6 +11,3 @@ function render() {
   document.getElementById("enemies").innerHTML = twoface.renderCharacter();
 }
 render();
-
-const box = new Array("📦").fill(1000);
-console.log(box);

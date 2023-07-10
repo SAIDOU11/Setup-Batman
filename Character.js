@@ -16,7 +16,7 @@ class Character {
   }
   renderCharacter() {
     const { name, avatar, health, diceCount, currentScore } = this;
-    const diceHtml = setDiceHtml(diceCount);
+    let diceHtml = setDiceHtml(diceCount);
 
     return `
     <div class="character-card">
