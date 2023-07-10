@@ -151,10 +151,10 @@ main {
 .dice,
 .placeholder-dice {
   height: 5.5vh;
-  width: 5.5vw;
+  width: 5.5vh;
   background: #fff;
   border-radius: 5px;
-  color: #000721;
+  color: #50609b;
   border: 1px solid #666;
   text-align: center;
   line-height: 6vh;

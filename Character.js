@@ -1,22 +1,33 @@
+import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js";
+
 class Character {
   constructor(data) {
     Object.assign(this, data);
+    this.maxHealth = this.health;
+    this.diceHtml = getDicePlaceholderHtml(this.diceCount);
   }
-  getDiceRollArray(diceCount) {
-    return new Array(diceCount).fill(0).map(() => {
-      return Math.floor(Math.random() * 6) + 1;
-    });
-  }
-  setDiceHtml(diceCount) {
-    return getDiceRollArray(diceCount)
-      .map((value) => {
-        return `<div class="dice">${value}</div>`;
+  setDiceHtml() {
+    this.currentDiceScore = getDiceRollArray(this.diceCount);
+    this.diceHtml = this.currentDiceScore
+      .map((num) => {
+        return `<div class="dice">${num}</div>`;
       })
       .join("");
   }
+  takeDamage(attackScoreArray) {
+    const totalAttackScore = attackScoreArray.reduce(
+      (total, currentScore) => total + currentScore
+    );
+
+    this.health -= totalAttackScore;
+    if (this.health <= 0) {
+      this.dead = true;
+      this.health = 0;
+    }
+  }
   renderCharacter() {
-    const { name, avatar, health, diceCount, currentScore } = this;
-    let diceHtml = setDiceHtml(diceCount);
+    const { name, avatar, health, diceCount, diceHtml, currentDiceScore } =
+      this;
 
     return `
     <div class="character-card">
