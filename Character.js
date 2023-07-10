@@ -1,4 +1,8 @@
-import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js";
+import {
+  getDiceRollArray,
+  getDicePlaceholderHtml,
+  getPercentage,
+} from "./utils.js";
 
 class Character {
   constructor(data) {
@@ -20,14 +24,20 @@ class Character {
     );
 
     this.health -= totalAttackScore;
+
     if (this.health <= 0) {
       this.dead = true;
       this.health = 0;
     }
   }
+  getHealthBarHtml() {
+    const percent = getPercentage(this.health, this.maxHealth);
+    console.log(percent);
+  }
   renderCharacter() {
     const { name, avatar, health, diceCount, diceHtml, currentDiceScore } =
       this;
+    const healthBar = getHealthBarHtml();
 
     return `
     <div class="character-card">
